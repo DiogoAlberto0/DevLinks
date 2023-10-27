@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --bg-desktop-url: url(./assets/bg-desktop.jpg);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+    --toggle-handle-color: rgba(255, 255, 255, 1);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+
+
+
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --bg-desktop-url: url(./assets/bg-desktop-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+    background: var(--bg-desktop-url) no-repeat top center/cover;
+    
+    height: 100vh;
+    width: 100vw;
+    padding: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    width: 100%;
+    height: auto;
+}
+/* imagem de perfil */
+img {
+    height: 120px;
+    width: 120px;
+
+    border: 2px solid var(--stroke-color);
+    border-radius: 50%;
+}
+/* botão de switch de tema */
+button {
+    background-color: var(--surface-color);
+    width: 64px;
+    height: 24px;
+
+    border: 2px solid var(--stroke-color);
+    border-radius: 50px;
+    cursor: pointer;
+
+    position: relative;
+}
+
+#swich_button_svg {
+    background-color: var(--toggle-handle-color);
+    height: 32px;
+    width: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    left: 0;
+    top: calc(50% - 16px);
+    transition: all 1s;
+}
+
+.light #swich_button_svg {
+    /* right: 0; */
+    left: auto;
+
+    transform: translateX(100%);
+    transition: all 1s;
+}
+
+/* links */
+a {
+    text-decoration: none;
+}
+.links {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    width: 100%;
+    height: 40px;
+    max-width: 300px;
+
+    border: 2px solid var(--stroke-color);
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.links:hover {
+    background-color: var(--surface-color-hover);
+    border-color: var(--text-color);
+}
+
+/* links redes sociais*/
+.media-links {
+    display: flex;
+    gap: 1rem;
+}
+.media-links > a > i {
+    font-size: 24px;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.media-links > a:hover > i {
+    color: var(--stroke-color);
+}
+
+/* feito com amor */
+
+p {
+    color: var(--text-color);
+}
